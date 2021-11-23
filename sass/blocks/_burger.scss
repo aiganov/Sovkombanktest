@@ -1,0 +1,13 @@
+// Burger
+
+.burger {
+    content: '';
+    padding: 10px 5px;
+    width: 22px;
+    height: 12px;
+    background: url("../img/icon-burger.svg") center no-repeat;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

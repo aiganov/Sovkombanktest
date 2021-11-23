@@ -1,0 +1,137 @@
+// Menu 
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu__item {
+    position: relative;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 27px 0;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:hover .menu__submenu {
+        display: block;
+    }
+
+    &:hover .menu__triangle  {
+        transform: translateY(-50%) rotate(180deg);
+    }    
+}
+
+.menu__link--position {
+    position: relative;
+}
+
+.menu__triangle {
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 4px 0 4px;
+    border-color: #f2984a transparent transparent transparent;  
+    transform: translateY(-50%);     
+    transition: 0.2s;
+}
+
+.menu__link {
+    padding: 8px 18px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FAFAFA;
+    text-decoration: none;
+
+    &:hover {
+        color: #EB5757;
+    }
+}
+
+.menu__submenu {
+    display: none;
+}
+
+.menu__submenu--position {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    top: 100%;   
+}
+
+
+@media (max-width: 1180px) {
+
+   .menu__item {
+    margin-right: 0;
+   } 
+
+}
+
+@media (max-width: 768px) {
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu__item {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid #131417;
+        box-sizing: border-box;
+    }
+
+    .menu__link {
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+
+        &:hover {
+            color: #fff;
+            background: #131417;
+        }
+    }
+
+    .menu__triangle {
+        position: relative;
+        display: inline-block;
+    }
+
+    .menu__item--active {
+        border-bottom: none;
+
+        .menu__link {
+            background: #131417;  
+        }
+
+        .menu__triangle {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .menu__submenu {
+            display: block;
+        }
+    }
+
+    .menu__submenu--position {
+        position: relative;
+    }
+
+}

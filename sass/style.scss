@@ -1,0 +1,12 @@
+// General
+@use '_fonts.scss';
+@use '_layout.scss';
+
+
+// Blocks
+@use 'blocks/_header.scss';
+@use 'blocks/_logo.scss';
+@use 'blocks/_menu.scss';
+@use 'blocks/_submenu.scss';
+@use 'blocks/_banner.scss';
+@use 'blocks/_burger.scss';

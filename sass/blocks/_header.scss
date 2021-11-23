@@ -1,0 +1,139 @@
+// Header 
+
+.header {
+    min-height: 80px;
+    background: #131417;
+    box-shadow: 0px 4px 4px rgba(19, 20, 23, 0.4);
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+}
+
+.header__nav {
+    flex-grow: 1;
+    padding: 0 40px;
+}
+
+.header__menu {
+    min-height: 80px;    
+}
+
+.header_phone {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;    
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.header_phone--icon {
+    position: relative;
+    padding-left: 31px;
+
+    &::before {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        display: block;
+        content: '';
+        width: 18px;
+        height: 18px;
+        background: url("../img/icon-phone.svg") no-repeat;
+    }
+}
+
+.header__burger {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+    .header {
+        position: relative;
+        z-index: 25;
+
+        &::before {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            display: none;
+            content: '';
+            width: 100%; 
+            background: rgba(19, 20, 23, 0.5);        
+        }
+
+        &::after {
+            position: absolute;
+            z-index: 15;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            display: none;
+            content: '';
+            width: 374px;
+            height: calc(100vh - 80px);
+            margin-top: 80px;
+            background: #131417;
+            box-shadow: -4px 0px 4px rgba(0, 0, 0, 0.25);
+            box-sizing: border-box;
+        }
+    }
+
+    .header--active {
+
+        .header__nav {
+            display: block;
+        }        
+
+        &::before,
+        &::after {
+            display: block;
+        }
+
+    }
+
+    .header__nav {
+        display: none;
+        position: absolute;
+        z-index: 20;
+        top: 80px;
+        right: 0;
+        flex-grow: 0;
+        width: 374px;
+        padding: 0;
+        background: #252830;
+        overflow-y: auto;
+    }
+
+
+    .header__burger {
+        display: block;
+    }
+
+}
+
+
+@media (max-width: 375px) {
+
+    .header_phone {
+        font-size: 0;
+        margin-left: auto;
+    }
+
+    .header__nav {
+        width: 100%;
+    }
+
+}

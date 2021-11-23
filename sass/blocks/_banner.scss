@@ -1,0 +1,22 @@
+// Banner 
+
+.banner {
+    display: block;
+}
+
+.banner--background {
+    height: 92vh;
+    background: url("../img/banner-background.jpg") no-repeat;
+    background-size: 100%;
+}
+
+
+
+@media (max-width: 1180px) {
+
+    .banner--background {
+        background-position: center;
+        background-size: cover;
+    }
+
+}
